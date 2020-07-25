@@ -1,6 +1,7 @@
 import * as React from "react";
 import { SessionRepository } from "../repository/session";
 import { AuthContext } from "./_app";
+import { UserRepository } from "../repository/user";
 
 export default () => {
   const auth = React.useContext(AuthContext);
@@ -10,17 +11,31 @@ export default () => {
         auth.setUid(userId);
       },
       errorHanle: () => {
-        alert("認証チェックに失敗しました。");
+        auth.setUid(null);
       },
     });
   }, []);
   return (
     <div>
       {auth.uid ? (
-        `userId: ${auth.uid}`
+        <div>
+          <p> userId: ${auth.uid}</p>
+          <button
+            onClick={async () => {
+              await SessionRepository.logout();
+            }}
+          >
+            ログアウト
+          </button>
+        </div>
       ) : (
-        <button onClick={() => SessionRepository.loginAnonymous()}>
-          login
+        <button
+          onClick={async () => {
+            const userId = await SessionRepository.loginAnonymous();
+            UserRepository.createAnonymouseUser(userId);
+          }}
+        >
+          匿名ログイン
         </button>
       )}
     </div>

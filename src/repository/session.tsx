@@ -25,4 +25,7 @@ export const SessionRepository = {
       }
     });
   },
+  logout: () => {
+    Firebase.instance.auth.signOut();
+  },
 };
