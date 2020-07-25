@@ -1,0 +1,29 @@
+{
+  "name": "fb-store-auth-practice",
+  "version": "1.0.0",
+  "description": "firebaseの実験",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ojisan-toybox/fb-store-auth-practice.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/ojisan-toybox/fb-store-auth-practice/issues"
+  },
+  "homepage": "https://github.com/ojisan-toybox/fb-store-auth-practice#readme",
+  "dependencies": {
+    "firebase": "^7.17.1",
+    "next": "^9.4.4",
+    "react": "^16.13.1",
+    "react-dom": "^16.13.1"
+  },
+  "devDependencies": {
+    "@types/react": "^16.9.43",
+    "@types/react-dom": "^16.9.8"
+  }
+}
