@@ -8,7 +8,6 @@ export default () => {
   const auth = React.useContext(AuthContext);
   const [content, setContent] = React.useState("");
   const [posts, setPosts] = React.useState<{ content: string }[]>([]);
-  console.log(posts);
   React.useEffect(() => {
     SessionRepository.checkAlreadyLogin({
       successHandle: (userId: string) => {
@@ -86,8 +85,6 @@ export default () => {
       {posts.map((post) => (
         <div>{post.content}</div>
       ))}
-      <h3>reactive data</h3>
-      <p>postすると自動で取得できるよ</p>
     </div>
   );
 };

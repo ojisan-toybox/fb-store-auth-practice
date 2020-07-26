@@ -28,4 +28,7 @@ export const SessionRepository = {
   logout: () => {
     Firebase.instance.auth.signOut();
   },
+  delete: () => {
+    Firebase.instance.auth.currentUser.delete();
+  },
 };
